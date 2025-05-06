@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เว็บไซต์ของฉัน</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Prompt', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* เมนู */
+    header {
+      background-color: #1976d2;
+      color: white;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* รูปปก */
+    .hero {
+      background-image: url('https://placehold.co/1200x500?text=ภาพปกของคุณ'); /* เปลี่ยนลิงก์ภาพได้ */
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ส่วนแนะนำตัว */
+    .about {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about h2 {
+      color: #1976d2;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    /* ส่วนท้าย */
+    footer {
+      background-color: #e0e0e0;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>My Website</strong></div>
+    <nav>
+      <a href="#">หน้าแรก</a>
+      <a href="#about">เกี่ยวกับ</a>
+      <a href="#contact">ติดต่อ</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>สวัสดี! ฉันชื่อ [ชื่อของคุณ]</h1>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <h2>เกี่ยวกับฉัน</h2>
+    <p>ยินดีต้อนรับสู่เว็บไซต์ของฉัน! คุณสามารถแก้ไขข้อความนี้เพื่อเล่าเรื่องราวเกี่ยวกับตัวเอง เช่น การศึกษา ความสามารถ หรือผลงานต่างๆ</p>
+    <a href="#contact" class="button">ติดต่อฉัน</a>
+  </section>
+
+  <footer id="contact">
+    <p>ติดต่อ: <a href="mailto:your@email.com">your@email.com</a></p>
+    <p>&copy; 2025 สงวนลิขสิทธิ์โดย [ชื่อของคุณ]</p>
+  </footer>
+
+</body>
+</html>
