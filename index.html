@@ -50,9 +50,9 @@
       font-weight: bold;
     }
 
-    /* ขนาดตัวนับถอยหลังเป็น 36px และลบกรอบออก */
+    /* ขนาดตัวนับถอยหลังเป็น 34px และลบกรอบออก */
     #countdown {
-      font-size: 36px; /* ขนาดตัวนับถอยหลัง */
+      font-size: 34px; /* ขนาดตัวนับถอยหลัง */
       padding: 10px 20px; /* ขนาดของกรอบพอดีกับตัวอักษร */
       border-radius: 8px; /* มุมกรอบมน */
       border: none; /* ลบกรอบออก */
@@ -76,9 +76,10 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    /* เมื่อเอาเมาส์ชี้ เมนูเปลี่ยนสีและนูนขึ้น */
+    /* เมื่อเอาเมาส์ชี้ เมนูจะมีแถบสีเข้ม */
     nav a:hover {
-      background-color: rgba(25, 118, 210, 0.1);
+      background-color: #1976d2; /* สีเข้มเมื่อเมาส์ชี้ */
+      color: white; /* เปลี่ยนสีข้อความเป็นขาว */
       transform: translateY(-3px); /* นูนขึ้น */
     }
 
