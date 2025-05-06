@@ -1,42 +1,123 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>กยศ.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Prompt', sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      text-align: center;
-      padding: 50px;
-    }
-    p {
-      text-align: center;
-      font-size: 20px;
-    }
-    a {
-      text-align: center;
-      display: block;
-      margin-top: 30px;
-      color: #1976d2;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #1565c0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กยศ. ภาคฤดูร้อน 2568</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1976d2;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .info-section {
+            margin-top: 30px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .info-section p {
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            background-color: #fafafa;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #1565c0;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
 
-  <h1>กยศ.</h1>
-  <p>รายละเอียดเกี่ยวกับ กยศ. จะถูกแสดงในหน้านี้</p>
-  <a href="index.html">กลับไปที่หน้าแรก</a> <!-- ลิงก์กลับไปหน้าแรก -->
-  
+    <div class="container">
+        <h1>กยศ. ภาคฤดูร้อน 2568</h1>
+
+        <div class="info-section">
+            <p>ขอเชิญนักศึกษาที่ต้องการสมัครเข้าร่วมกิจกรรมภาคฤดูร้อน 2568 ภาคต้น เข้าร่วมสมัครเพื่อขอรับทุนการศึกษาจาก กยศ.</p>
+            <p>กรุณากรอกข้อมูลในฟอร์มด้านล่างเพื่อสมัครเข้าโครงการ โดยสามารถใช้ข้อมูลของคุณในระบบเพื่อดำเนินการต่อไป</p>
+        </div>
+
+        <div class="form-container">
+            <form action="submit_form.html" method="POST">
+                <label for="student-id">รหัสนักศึกษา:</label>
+                <input type="text" id="student-id" name="student-id" required placeholder="กรอกรหัสนักศึกษา">
+
+                <label for="full-name">ชื่อ-นามสกุล:</label>
+                <input type="text" id="full-name" name="full-name" required placeholder="กรอกชื่อและนามสกุล">
+
+                <label for="email">อีเมล:</label>
+                <input type="email" id="email" name="email" required placeholder="กรอกอีเมลของคุณ">
+
+                <input type="submit" value="สมัครเข้าร่วมโครงการ">
+            </form>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 สงวนลิขสิทธิ์โดย กยศ.</p>
+        </footer>
+    </div>
+
 </body>
+
 </html>
