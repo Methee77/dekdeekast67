@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>dekdeekaset67</title>
+  <!-- เพิ่มลิงก์ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -19,8 +21,8 @@
 
     /* โหมดกลางคืน */
     body.dark-mode {
-      background-color: #121212; /* สีพื้นหลังโหมดกลางคืน */
-      color: #f5f5f5; /* สีข้อความโหมดกลางคืน */
+      background-color: #121212;
+      color: #f5f5f5;
     }
 
     /* เมนู */
@@ -45,7 +47,7 @@
 
     /* รูปปก */
     .hero {
-      background-image: url('https://placehold.co/1200x500?text=ภาพปกของคุณ'); /* เปลี่ยนลิงก์ภาพได้ */
+      background-image: url('https://placehold.co/1200x500?text=ภาพปกของคุณ');
       background-size: cover;
       background-position: center;
       height: 400px;
@@ -133,7 +135,10 @@
       <a href="#about">เกี่ยวกับ</a>
       <a href="#contact">ติดต่อ</a>
     </nav>
-    <button id="toggle-theme">สลับโหมด</button>
+    <!-- ปุ่มสลับโหมด -->
+    <button id="toggle-theme">
+      <i id="theme-icon" class="fas fa-sun"></i> <!-- ใช้ไอคอนดวงอาทิตย์ -->
+    </button>
   </header>
 
   <div class="hero">
@@ -155,19 +160,26 @@
 
   <script>
     const toggleButton = document.getElementById('toggle-theme');
+    const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
     // ตรวจสอบว่าผู้ใช้เคยเลือกโหมดไว้หรือไม่
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark-mode');
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon'); // เปลี่ยนเป็นไอคอนพระจันทร์ตอนกลางคืน
     }
 
     toggleButton.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
       if (body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon'); // เปลี่ยนเป็นพระจันทร์
       } else {
         localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun'); // เปลี่ยนเป็นดวงอาทิตย์
       }
     });
   </script>
