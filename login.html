@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
   <style>
     /* สไตล์พื้นฐาน */
     body {
-      font-family: 'Prompt', pormpt;
+      font-family: 'Prompt', sans-serif;
       background-color: #f7f7f7;
       margin: 0;
       display: flex;
@@ -33,16 +34,7 @@
       margin-bottom: 30px;
     }
 
-    input[type="tel"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      font-size: 16px;
-    }
-
+    input[type="text"],
     input[type="password"] {
       width: 100%;
       padding: 12px;
@@ -68,62 +60,53 @@
       background-color: #1565c0;
     }
 
-    .register-link {
+    .signup-link {
       margin-top: 20px;
       font-size: 16px;
       color: #1976d2;
     }
 
-    .register-link a {
+    .signup-link a {
       text-decoration: none;
       color: #1976d2;
     }
 
-    .register-link a:hover {
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    .forgot-password {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .forgot-password a {
+      text-decoration: none;
+      color: #1976d2;
+    }
+
+    .forgot-password a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
   <div class="login-container">
     <h2>เข้าสู่ระบบ</h2>
-    <form id="login-form">
-      <input type="tel" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" required>
-      <input type="password" id="password" name="password" placeholder="รหัสผ่าน" required>
+    <form action="dashboard.html" method="POST">
+      <input type="text" name="username" placeholder="ชื่อผู้ใช้" required>
+      <input type="password" name="password" placeholder="รหัสผ่าน" required>
       <input type="submit" value="เข้าสู่ระบบ">
     </form>
-    <div class="register-link">
-      <p>ยังไม่มีบัญชี? <a href="register.html">สมัครสมาชิก</a></p>
+    <div class="signup-link">
+      <p>ยังไม่มีบัญชี? <a href="signup.html">สมัครสมาชิก</a></p>
+    </div>
+    <div class="forgot-password">
+      <p><a href="#">ลืมรหัสผ่าน?</a></p>
     </div>
   </div>
-
-  <script>
-    // ฟังก์ชันที่ใช้ในการเข้าสู่ระบบ
-    document.getElementById('login-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const phone = document.getElementById('phone').value;
-      const password = document.getElementById('password').value;
-
-      // ดึงข้อมูลที่บันทึกไว้จาก localStorage
-      const storedUser = localStorage.getItem('user');
-      
-      if (!storedUser) {
-        alert('ไม่มีข้อมูลผู้ใช้');
-        return;
-      }
-
-      const userData = JSON.parse(storedUser);
-
-      // ตรวจสอบข้อมูลการเข้าสู่ระบบ
-      if (userData.phone === phone && userData.password === password) {
-        // ถ้าข้อมูลตรงกัน นำผู้ใช้ไปยังหน้าแดชบอร์ด
-        alert('เข้าสู่ระบบสำเร็จ');
-        window.location.href = 'gyos.html'; // เปลี่ยนไปยังหน้าแดชบอร์ด
-      } else {
-        alert('เบอร์โทรศัพท์หรือรหัสผ่านไม่ถูกต้อง');
-      }
-    });
-  </script>
 </body>
+
 </html>
