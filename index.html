@@ -9,11 +9,18 @@
       box-sizing: border-box;
     }
 
+    /* โหมดกลางวัน */
     body {
       margin: 0;
       font-family: 'Prompt', Prompt;
       background-color: #f4f4f4;
       color: #333;
+    }
+
+    /* โหมดกลางคืน */
+    body.dark-mode {
+      background-color: #121212; /* สีพื้นหลังโหมดกลางคืน */
+      color: #f5f5f5; /* สีข้อความโหมดกลางคืน */
     }
 
     /* เมนู */
@@ -77,6 +84,21 @@
       border-radius: 6px;
     }
 
+    /* ปุ่มสลับโหมด */
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background-color: #1565c0;
+    }
+
     /* ส่วนท้าย */
     footer {
       background-color: #e0e0e0;
@@ -111,6 +133,7 @@
       <a href="#about">เกี่ยวกับ</a>
       <a href="#contact">ติดต่อ</a>
     </nav>
+    <button id="toggle-theme">สลับโหมด</button>
   </header>
 
   <div class="hero">
@@ -126,9 +149,28 @@
   </section>
 
   <footer id="contact">
-    <p>ติดต่อ: <a href="methee.jsd05@gmail.com">methee.jsd05@.com</a></p>
+    <p>ติดต่อ: <a href="mailto:methee.jsd05@gmail.com">methee.jsd05@gmail.com</a></p>
     <p>&copy; 2025 สงวนลิขสิทธิ์โดย [เมธี ใจสุขดี]</p>
   </footer>
+
+  <script>
+    const toggleButton = document.getElementById('toggle-theme');
+    const body = document.body;
+
+    // ตรวจสอบว่าผู้ใช้เคยเลือกโหมดไว้หรือไม่
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 
 </body>
 </html>
