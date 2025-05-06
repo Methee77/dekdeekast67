@@ -42,23 +42,25 @@
       margin: 20px auto;
       font-size: 24px;
       font-family: 'Prompt', sans-serif;
-      color: black;
       background-color: white;
       padding: 20px 30px;
       border-radius: 16px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       max-width: 600px;
       text-align: center;
+      color: black; /* สีเริ่มต้น */
+      border: 2px solid #ccc; /* สีกรอบเริ่มต้น */
+    }
+
+    .dark-mode #exam-info {
+      color: #fff; /* สีข้อความในโหมดมืด */
+      background-color: #333; /* พื้นหลังโหมดมืด */
+      border: 2px solid #fff; /* สีกรอบในโหมดมืด */
     }
 
     #exam-info p {
       margin: 8px 0;
       font-weight: bold;
-    }
-
-    .dark-mode #exam-info {
-      color: #000;
-      background-color: #fff;
     }
 
     /* ปุ่มธีม */
@@ -99,15 +101,6 @@
 
     section.about p {
       font-size: 18px;
-    }
-
-    section.about a.button {
-      padding: 10px 20px;
-      background-color: #1976d2;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
     }
 
     footer {
@@ -151,7 +144,6 @@
   <section class="about" id="about">
     <h2>สงวนสิทธิ์</h2>
     <p>ขอสงวนสิทธิ์สำหรับกลุ่มเด็กดีเกษตร67 ชมรมคนติด W เท่านั้น</p>
-    <a href="#contact" class="button">ติดต่อฉัน</a>
   </section>
 
   <!-- เพิ่มคำว่า "Update" และแสดงวันที่อัปเดต -->
