@@ -38,37 +38,6 @@
       margin: 0;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      padding: 10px 20px;
-      border: 2px solid #1976d2;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #1976d2;
-      font-weight: 500;
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: rgba(25, 118, 210, 0.1);
-    }
-
-    body.dark-mode nav a {
-      border-color: #90caf9;
-      color: #90caf9;
-    }
-
-    body.dark-mode nav a:hover {
-      background-color: rgba(144, 202, 249, 0.1);
-    }
-
     #exam-info {
       margin: 20px auto;
       font-size: 24px;
@@ -80,11 +49,11 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       max-width: 600px;
       text-align: center;
-      font-weight: bold;
     }
 
     #exam-info p {
       margin: 8px 0;
+      font-weight: bold;
     }
 
     .dark-mode #exam-info {
@@ -110,25 +79,66 @@
     #toggle-theme:hover {
       background-color: #1565c0;
     }
+
+    /* นับถอยหลัง */
+    #countdown {
+      font-size: 48px;
+      font-weight: bold;
+      color: black;
+    }
+
+    section.about {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    section.about h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    section.about p {
+      font-size: 18px;
+    }
+
+    section.about a.button {
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #555;
+      background-color: #f4f4f4;
+    }
+
+    footer a {
+      color: #1976d2;
+      text-decoration: none;
+    }
+
+    /* สำหรับปรับเปลี่ยนวันที่ */
+    #update-info {
+      font-size: 14px;
+    }
+
   </style>
 </head>
 <body>
 
   <header>
     <h1>dekdeekaset67</h1>
-
-    <!-- เมนู -->
-    <nav>
-      <a href="#">กยศ.</a>
-      <a href="#">ภาคฤดูร้อน 2568</a>
-      <a href="#">ภาคต้น 2568</a>
-    </nav>
-
-    <!-- กล่องนับถอยหลัง -->
+    
     <div id="exam-info">
-      <p>สอบกลางภาค 01403111 เคมีทั่วไป</p>
-      <p>เหลือเวลาอีก</p>
-      <p id="countdown">กำลังโหลด...</p>
+      <p><strong>สอบกลางภาค 01403111 เคมีทั่วไป</strong></p>
+      <p><strong>เหลือเวลาอีก</strong></p>
+      <p id="countdown"><strong>กำลังโหลด...</strong></p>
     </div>
 
     <!-- ปุ่มสลับโหมด -->
@@ -137,7 +147,32 @@
     </div>
   </header>
 
+  <!-- ส่วนแนะนำตัว -->
+  <section class="about" id="about">
+    <h2>สงวนสิทธิ์</h2>
+    <p>ขอสงวนสิทธิ์สำหรับกลุ่มเด็กดีเกษตร67 ชมรมคนติด W เท่านั้น</p>
+    <a href="#contact" class="button">ติดต่อฉัน</a>
+  </section>
+
+  <!-- เพิ่มคำว่า "Update" และแสดงวันที่อัปเดต -->
+  <footer id="contact">
+    <p>ติดต่อ: <a href="mailto:methee.jsd05@gmail.com">methee.jsd05@gmail.com</a></p>
+    <p>&copy; 2025 สงวนลิขสิทธิ์โดย [เมธี ใจสุขดี]</p>
+    <p id="update-info" style="font-size: 14px;"></p> <!-- แสดงวันที่อัปเดต -->
+  </footer>
+
   <script>
+    // ฟังก์ชันที่ใช้ในการแสดงวันที่อัปเดต
+    function updateDate() {
+      const updateElement = document.getElementById('update-info');
+      const currentDate = new Date();
+      const dateString = `Update: ${currentDate.toLocaleDateString('th-TH')} ${currentDate.toLocaleTimeString('th-TH')}`; 
+      updateElement.innerHTML = dateString;
+    }
+
+    // เรียกใช้ฟังก์ชันเมื่อโหลดหน้า
+    updateDate();
+
     // นับถอยหลัง
     function updateCountdown() {
       const targetDate = new Date("2025-05-09T09:00:00+07:00").getTime();
@@ -145,7 +180,7 @@
       const diff = targetDate - now;
 
       if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "หมดเวลาแล้ว";
+        document.getElementById("countdown").innerHTML = "<strong>หมดเวลาแล้ว</strong>";
         return;
       }
 
@@ -154,8 +189,7 @@
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      document.getElementById("countdown").innerHTML =
-        `${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
+      document.getElementById("countdown").innerHTML = `<strong>${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที</strong>`;
     }
 
     setInterval(updateCountdown, 1000);
