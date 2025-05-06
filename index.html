@@ -162,7 +162,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // ฟังก์ชันที่ใช้ในการแสดงวันที่อัปเดต
+    /// ฟังก์ชันที่ใช้ในการแสดงวันที่อัปเดต
     function updateDate() {
       const updateElement = document.getElementById('update-info');
       const currentDate = new Date();
@@ -170,7 +170,9 @@
       updateElement.innerHTML = dateString;
     }
 
-  </script>
-
+    // เรียกใช้ฟังก์ชันเมื่อมีการแก้ไขระบบ
+    updateDate();
+</script>
+  
 </body>
 </html>
