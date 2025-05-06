@@ -27,38 +27,6 @@
       color: #f5f5f5;
     }
 
-    /* เมนู */
-    header {
-      background-color: #1976d2;
-      color: white;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    header nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px solid white; /* ขอบสีขาว */
-      border-radius: 12px; /* มุมมน */
-      padding: 10px 20px;
-      transition: background-color 0.3s ease;
-    }
-
-    header nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2); /* เปลี่ยนสีเมื่อ hover */
-    }
-
     /* รูปปก */
     .hero {
       background-image: url('https://drive.google.com/uc?id=1czvXwLVWVHXss0g6pMZxaOAXbBAwZweu'); /* ใช้ลิงก์ Google Drive */
@@ -76,6 +44,34 @@
     .hero h1 {
       font-size: 48px;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ส่วนเมนู */
+    header {
+      text-align: center;
+      padding: 16px 0;
+    }
+
+    /* เมนู */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #1976d2; /* ขอบสีฟ้า */
+      border-radius: 12px; /* มุมมน */
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(25, 118, 210, 0.1); /* เปลี่ยนสีเมื่อ hover */
     }
 
     /* ส่วนแนะนำตัว */
@@ -128,38 +124,26 @@
       .hero h1 {
         font-size: 32px;
       }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      header nav {
-        margin-top: 10px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div><strong>My Website</strong></div>
-    <nav>
-      <a href="#">กยศ.</a>
-      <a href="#">ภาคฤดูร้อน พ.ศ. 2568</a>
-      <a href="#">ภาคต้น 2568</a>
-    </nav>
-    <!-- ปุ่มสลับโหมด -->
-    <button id="toggle-theme">
-      <i id="theme-icon" class="fas fa-sun"></i> <!-- ใช้ไอคอนดวงอาทิตย์ -->
-    </button>
-  </header>
-
+  <!-- รูปปก -->
   <div class="hero">
     <div>
       <h1>dekdeekaset67</h1>
     </div>
   </div>
+
+  <!-- เมนู -->
+  <header>
+    <nav>
+      <a href="#">กยศ.</a>
+      <a href="#">ภาคฤดูร้อน พ.ศ. 2568</a>
+      <a href="#">ภาคต้น 2568</a>
+    </nav>
+  </header>
 
   <section class="about" id="about">
     <h2>เกี่ยวกับฉัน</h2>
