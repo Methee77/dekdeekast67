@@ -50,13 +50,12 @@
       font-weight: bold;
     }
 
-    /* ขนาดตัวนับถอยหลังเป็น 38px และลบกรอบออก */
+    /* ขนาดตัวนับถอยหลังเป็น 36px และลบกรอบออก */
     #countdown {
-      font-size: 38px; /* ขนาดตัวนับถอยหลัง */
+      font-size: 36px; /* ขนาดตัวนับถอยหลัง */
       padding: 10px 20px; /* ขนาดของกรอบพอดีกับตัวอักษร */
       border-radius: 8px; /* มุมกรอบมน */
-      /* ลบการตั้งค่ากรอบสีออก */
-      border: none;
+      border: none; /* ลบกรอบออก */
     }
 
     /* เมนู */
@@ -74,11 +73,13 @@
       border: 2px solid #1976d2;
       border-radius: 12px;
       padding: 12px 24px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
+    /* เมื่อเอาเมาส์ชี้ เมนูเปลี่ยนสีและนูนขึ้น */
     nav a:hover {
       background-color: rgba(25, 118, 210, 0.1);
+      transform: translateY(-3px); /* นูนขึ้น */
     }
 
     /* สงวนสิทธิ์ */
