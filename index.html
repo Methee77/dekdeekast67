@@ -162,39 +162,26 @@
     <h2>สงวนสิทธิ์</h2>
     <p>ขอสงวนสิทธิ์สำหรับกลุ่มเด็กดีเกษตร67 ชมรมคนติด W เท่านั้น</p>
     <a href="#contact" class="button">ติดต่อฉัน</a>
-    <!-- เพิ่มคำว่า "update" ที่นี่ -->
-    <p>update</p>
   </section>
 
+  <!-- เพิ่มคำว่า "Update" และแสดงวันที่อัปเดต -->
   <footer id="contact">
     <p>ติดต่อ: <a href="mailto:methee.jsd05@gmail.com">methee.jsd05@gmail.com</a></p>
     <p>&copy; 2025 สงวนลิขสิทธิ์โดย [เมธี ใจสุขดี]</p>
+    <p id="update-info" style="font-size: 14px;"></p> <!-- แสดงวันที่อัปเดต -->
   </footer>
 
   <script>
-    const toggleButton = document.getElementById('toggle-theme');
-    const themeIcon = document.getElementById('theme-icon');
-    const body = document.body;
-
-    // ตรวจสอบว่าผู้ใช้เคยเลือกโหมดไว้หรือไม่
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
-      themeIcon.classList.remove('fa-sun');
-      themeIcon.classList.add('fa-moon'); // เปลี่ยนเป็นไอคอนพระจันทร์ตอนกลางคืน
+    // ฟังก์ชันที่ใช้ในการแสดงวันที่อัปเดต
+    function updateDate() {
+      const updateElement = document.getElementById('update-info');
+      const currentDate = new Date();
+      const dateString = `Update: ${currentDate.toLocaleDateString('th-TH')} ${currentDate.toLocaleTimeString('th-TH')}`; 
+      updateElement.innerHTML = dateString;
     }
 
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon'); // เปลี่ยนเป็นพระจันทร์
-      } else {
-        localStorage.setItem('theme', 'light');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun'); // เปลี่ยนเป็นดวงอาทิตย์
-      }
-    });
+    // เรียกใช้ฟังก์ชันเมื่อโหลดหน้า
+    updateDate();
   </script>
 
 </body>
