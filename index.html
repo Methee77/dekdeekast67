@@ -174,10 +174,16 @@
   <script>
     // ฟังก์ชันที่ใช้ในการแสดงวันที่อัปเดต
     function updateDate() {
+      // ตรวจสอบว่ามีการตั้งค่าการอัปเดตใน localStorage หรือไม่
+      let lastUpdate = localStorage.getItem('last-update');
+      if (!lastUpdate) {
+        // หากยังไม่เคยมีการอัปเดต จะแสดงวันที่ปัจจุบัน
+        lastUpdate = new Date().toLocaleDateString('th-TH') + ' ' + new Date().toLocaleTimeString('th-TH');
+        localStorage.setItem('last-update', lastUpdate); // เก็บวันที่ล่าสุดใน localStorage
+      }
+      
       const updateElement = document.getElementById('update-info');
-      const currentDate = new Date();
-      const dateString = `Update: ${currentDate.toLocaleDateString('th-TH')} ${currentDate.toLocaleTimeString('th-TH')}`; 
-      updateElement.innerHTML = dateString;
+      updateElement.innerHTML = `Update: ${lastUpdate}`;
     }
 
     // เรียกใช้ฟังก์ชันเมื่อโหลดหน้า
