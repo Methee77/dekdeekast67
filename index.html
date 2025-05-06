@@ -16,6 +16,8 @@
     /* โหมดกลางวัน */
     body {
       margin: 0;
+      padding: 0;
+      border: 5px solid #1976d2; /* ขอบรอบทั้งหมด */
       font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
       background-color: #f4f4f4;
       color: #333;
@@ -29,7 +31,7 @@
 
     /* รูปปก */
     .hero {
-      background-image: url('https://drive.google.com/uc?id=1czvXwLVWVHXss0g6pMZxaOAXbBAwZweu'); /* ใช้ลิงก์ Google Drive */
+      background-image: url('https://drive.google.com/uc?id=1czvXwLVWVHXss0g6pMZxaOAXbBAwZweu');
       background-size: cover;
       background-position: center;
       height: 400px;
@@ -50,6 +52,7 @@
     header {
       text-align: center;
       padding: 16px 0;
+      border: 2px solid #1976d2; /* ขอบของส่วนเมนู */
     }
 
     /* เมนู */
@@ -58,21 +61,21 @@
       justify-content: center;
       gap: 20px;
       margin-top: 20px;
-      animation: slideUp 0.8s ease-out; /* การเลื่อนขึ้นเมื่อรีเฟรช */
+      animation: slideUp 0.8s ease-out;
     }
 
     nav a {
       color: #1976d2;
       text-decoration: none;
-      font-weight: normal; /* ตัวหนังสือไม่หนา */
-      border: 2px solid #1976d2; /* ขอบสีฟ้า */
-      border-radius: 12px; /* มุมมน */
-      padding: 12px 24px; /* ให้ขนาดกรอบเท่ากัน */
+      font-weight: normal;
+      border: 2px solid #1976d2; /* ขอบเมนู */
+      border-radius: 12px;
+      padding: 12px 24px;
       transition: background-color 0.3s ease;
     }
 
     nav a:hover {
-      background-color: rgba(25, 118, 210, 0.1); /* เปลี่ยนสีเมื่อ hover */
+      background-color: rgba(25, 118, 210, 0.1);
     }
 
     /* ส่วนแนะนำตัว */
@@ -81,6 +84,7 @@
       max-width: 800px;
       margin: auto;
       text-align: center;
+      border: 2px solid #1976d2; /* ขอบส่วนแนะนำตัว */
     }
 
     .about h2 {
@@ -119,9 +123,9 @@
       padding: 20px;
       font-size: 14px;
       color: #555;
+      border: 2px solid #1976d2; /* ขอบส่วนท้าย */
     }
 
-    /* กรอบเมนูมีการเลื่อนขึ้นเมื่อรีเฟรช */
     @keyframes slideUp {
       0% {
         transform: translateY(20px);
@@ -164,31 +168,10 @@
     <a href="#contact" class="button">ติดต่อฉัน</a>
   </section>
 
-  <!-- เพิ่มคำว่า "Update" และแสดงวันที่อัปเดต -->
   <footer id="contact">
     <p>ติดต่อ: <a href="mailto:methee.jsd05@gmail.com">methee.jsd05@gmail.com</a></p>
     <p>&copy; 2025 สงวนลิขสิทธิ์โดย [เมธี ใจสุขดี]</p>
-    <p id="update-info" style="font-size: 14px;"></p> <!-- แสดงวันที่อัปเดต -->
   </footer>
-
-  <script>
-    // ฟังก์ชันที่ใช้ในการแสดงวันที่อัปเดต
-    function updateDate() {
-      // ตรวจสอบว่ามีการตั้งค่าการอัปเดตใน localStorage หรือไม่
-      let lastUpdate = localStorage.getItem('last-update');
-      if (!lastUpdate) {
-        // หากยังไม่เคยมีการอัปเดต จะแสดงวันที่ปัจจุบัน
-        lastUpdate = new Date().toLocaleDateString('th-TH') + ' ' + new Date().toLocaleTimeString('th-TH');
-        localStorage.setItem('last-update', lastUpdate); // เก็บวันที่ล่าสุดใน localStorage
-      }
-      
-      const updateElement = document.getElementById('update-info');
-      updateElement.innerHTML = `Update: ${lastUpdate}`;
-    }
-
-    // เรียกใช้ฟังก์ชันเมื่อโหลดหน้า
-    updateDate();
-  </script>
 
 </body>
 </html>
