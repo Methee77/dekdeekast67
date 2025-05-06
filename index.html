@@ -100,6 +100,31 @@
     nav a:hover {
       background-color: rgba(25, 118, 210, 0.1); /* เปลี่ยนสีเมื่อ hover */
     }
+
+    /* สงวนสิทธิ์ */
+    .about {
+      text-align: center;
+      margin: 30px auto;
+      font-size: 18px;
+    }
+
+    /* ฟุตเตอร์ */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #f1f1f1;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #1976d2;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
   </style>
 </head>
 <body>
@@ -125,6 +150,18 @@
       <a href="#">ภาคต้น 2568</a>
     </nav>
   </header>
+
+  <section class="about" id="about">
+    <h2>สงวนสิทธิ์</h2>
+    <p>ขอสงวนสิทธิ์สำหรับกลุ่มเด็กดีเกษตร67 ชมรมคนติด W เท่านั้น</p>
+  </section>
+
+  <!-- เพิ่มคำว่า "Update" และแสดงวันที่อัปเดต -->
+  <footer id="contact">
+    <p>ติดต่อ: <a href="mailto:methee.jsd05@gmail.com">methee.jsd05@gmail.com</a></p>
+    <p>&copy; 2025 สงวนลิขสิทธิ์โดย [เมธี ใจสุขดี]</p>
+    <p id="update-info" style="font-size: 14px;"></p> <!-- แสดงวันที่อัปเดต -->
+  </footer>
 
   <script>
     // นับถอยหลัง
@@ -172,6 +209,17 @@
         themeIcon.classList.add('fa-sun');
       }
     });
+
+    // ฟังก์ชันที่ใช้ในการแสดงวันที่อัปเดต
+    function updateDate() {
+      const updateElement = document.getElementById('update-info');
+      const currentDate = new Date();
+      const dateString = `Update: ${currentDate.toLocaleDateString('th-TH')} ${currentDate.toLocaleTimeString('th-TH')}`; 
+      updateElement.innerHTML = dateString;
+    }
+
+    // เรียกใช้ฟังก์ชันเมื่อโหลดหน้า
+    updateDate();
   </script>
 
 </body>
