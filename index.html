@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>dekdeekaset67</title>
-  
+
   <!-- ฟอนต์ Prompt -->
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
   <!-- ไอคอน Font Awesome -->
@@ -38,6 +38,37 @@
       margin: 0;
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 10px 20px;
+      border: 2px solid #1976d2;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 500;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: rgba(25, 118, 210, 0.1);
+    }
+
+    body.dark-mode nav a {
+      border-color: #90caf9;
+      color: #90caf9;
+    }
+
+    body.dark-mode nav a:hover {
+      background-color: rgba(144, 202, 249, 0.1);
+    }
+
     #exam-info {
       margin: 20px auto;
       font-size: 24px;
@@ -49,11 +80,11 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       max-width: 600px;
       text-align: center;
+      font-weight: bold;
     }
 
     #exam-info p {
       margin: 8px 0;
-      font-weight: bold;
     }
 
     .dark-mode #exam-info {
@@ -85,11 +116,19 @@
 
   <header>
     <h1>dekdeekaset67</h1>
-    
+
+    <!-- เมนู -->
+    <nav>
+      <a href="#">กยศ.</a>
+      <a href="#">ภาคฤดูร้อน 2568</a>
+      <a href="#">ภาคต้น 2568</a>
+    </nav>
+
+    <!-- กล่องนับถอยหลัง -->
     <div id="exam-info">
-      <p><strong>สอบกลางภาค 01403111 เคมีทั่วไป</strong></p>
-      <p><strong>เหลือเวลาอีก</strong></p>
-      <p id="countdown"><strong>กำลังโหลด...</strong></p>
+      <p>สอบกลางภาค 01403111 เคมีทั่วไป</p>
+      <p>เหลือเวลาอีก</p>
+      <p id="countdown">กำลังโหลด...</p>
     </div>
 
     <!-- ปุ่มสลับโหมด -->
@@ -106,7 +145,7 @@
       const diff = targetDate - now;
 
       if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "<strong>หมดเวลาแล้ว</strong>";
+        document.getElementById("countdown").innerHTML = "หมดเวลาแล้ว";
         return;
       }
 
@@ -115,7 +154,8 @@
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      document.getElementById("countdown").innerHTML = `<strong>${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที</strong>`;
+      document.getElementById("countdown").innerHTML =
+        `${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
     }
 
     setInterval(updateCountdown, 1000);
